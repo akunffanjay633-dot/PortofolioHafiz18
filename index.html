@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CHIMI 18 | Football x Volleyball Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--blue:#0a3cff;--cyan:#00e5ff;--dark:#070b19;--card:#11182e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--dark);color:#fff;font-family:'Manrope',sans-serif;overflow-x:hidden}
+h1,h2{font-family:'Oswald',sans-serif}
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 6%;background:rgba(7,11,25,.75);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-family:'Oswald';font-size:24px} .logo span{color:var(--cyan);text-shadow:0 0 10px var(--cyan)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;padding:110px 6% 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,var(--blue) 0%, transparent 70%);opacity:.35;filter:blur(20px);animation:pulse 4s infinite alternate}
+.hero::after{content:'⚽';position:absolute;right:10%;bottom:15%;font-size:80px;opacity:.08;animation:floatBall 6s infinite ease-in-out}
+@keyframes pulse{0%{transform:scale(1)}100%{transform:scale(1.3)}}
+@keyframes floatBall{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-30px) rotate(20deg)}}
+.badge{display:inline-flex;gap:8px;background:linear-gradient(90deg,var(--blue),var(--cyan));padding:7px 16px;border-radius:30px;font-size:11px;font-weight:800;letter-spacing:1px}
+.hero h1{font-size:clamp(44px,7vw,90px);line-height:.9;text-transform:uppercase} .hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--cyan);text-shadow:0 0 20px rgba(0,229,255,.5)}
+.hero p{color:#9aa3c0;margin:20px 0;line-height:1.7;max-width:540px}
+.stats{display:flex;gap:14px;flex-wrap:wrap} .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:14px 18px;min-width:110px;transition:.3s} .stat:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 0 20px rgba(0,229,255,.2)} .stat b{font-size:26px;display:block;font-family:'Oswald'}
+.btn{padding:15px 28px;border-radius:40px;text-decoration:none;font-weight:800;font-size:14px;display:inline-flex;gap:10px;transition:.3s} .btn-primary{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#fff;box-shadow:0 10px 30px rgba(10,60,255,.4)} .btn:hover{transform:translateY(-3px) scale(1.02)} .btn-ghost{border:1.5px solid rgba(255,255,255,.2);color:#fff}
+.img-card{border-radius:32px;overflow:hidden;border:2px solid rgba(255,255,255,.1);position:relative;transition:.6s} .img-card:hover{transform:rotateY(5deg) rotateX(5deg)} .img-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.jersey{position:absolute;top:16px;right:16px;background:#fff;color:#000;font-family:'Oswald';font-weight:700;padding:10px 18px;border-radius:40px;font-size:22px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.info-float{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:12px 16px;display:flex;justify-content:space-between}
+section{padding:80px 6%} .sec-title{font-size:48px} .sec-sub{color:#9aa3c0;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:26px;transition:.4s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transition:.4s} .card:hover::before{transform:scaleX(1)} .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.3), 0 0 20px rgba(0,229,255,.1)}
+.card i{font-size:28px;color:var(--cyan);margin-bottom:14px;display:block} .card p{color:#9aa3c0;font-size:14px;line-height:1.6}
+.contact-box{background:linear-gradient(135deg,var(--card),#0f1e42);border:1.5px solid rgba(0,229,255,.25);border-radius:30px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.c-link{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);padding:16px 20px;border-radius:16px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.08);transition:.3s;margin-bottom:12px} .c-link:hover{transform:translateX(6px);border-color:var(--cyan)}
+.reveal{opacity:0;transform:translateY(30px);transition:1s} .reveal.active{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.contact-box{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="logo">HAFIZ<span>.18</span></div><div style="font-size:11px;letter-spacing:2px;opacity:.6">ACEH • FOOTBALL • VOLLEYBALL</div></nav>
+<div class="hero">
+<div>
+<div class="badge">⚽ PORTFOLIO PRO ATLET • HAFIZ</div>
+<h1>HAFIZ <br><span class="outline">#18 FIELD</span><br>PLAYER</h1>
+<p>Pemain <b>Mini Soccer & Bola Voli</b> asal ACEH. Nomor punggung 18, spesialis komunikasi lapangan, stamina 90 menit, dan mental juara.</p>
+<div class="stats">
+<div class="stat"><b>18</b><small>NO PUNGGUNG</small></div>
+<div class="stat"><b>2</b><small>CABANG</small></div>
+<div class="stat"><b>ACEH</b><small>BASECAMP</small></div>
+</div>
+<div style="margin-top:24px">
+<a class="btn btn-primary" href="https://wa.me/6282272225853" target="_blank"><i class="fab fa-whatsapp"></i> 0822-7222-5853</a>
+<a class="btn btn-ghost" href="https://instagram.com/chimifieuss" target="_blank"><i class="fab fa-instagram"></i> chimifieuss</a>
+</div>
+</div>
+<div class="img-card">
+<img src="foto.jpg" alt="HAFIZ 18">
+<div class="jersey">18</div>
+<div class="info-float"><div><small style="color:#9aa3c0;font-size:10px">LIVE MATCH</small><br><b style="font-family:Oswald">MINI SOCCER BIREUEN</b></div><div style="background:var(--cyan);color:#000;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:800">ON FIELD</div></div>
+</div>
+</div>
+
+<section class="reveal">
+<h2 class="sec-title">TENTANG SAYA</h2><p class="sec-sub">Dedikasi tinggi di 2 lapangan berbeda</p>
+<div class="grid">
+<div class="card"><i class="fas fa-futbol"></i><h3>Sepak Bola - Mini Soccer</h3><p>Seperti di foto ini, aktif kasih arahan ke tim. Visi luas, komunikasi aktif, stamina full match.</p></div>
+<div class="card"><i class="fas fa-volleyball"></i><h3>Bola Voli - Spiker & Libero</h3><p>Timing smash akurat, receive stabil, footwork cepat. Turnamen kampung & kampus.</p></div>
+<div class="card"><i class="fas fa-fire"></i><h3>Mentalitas #18</h3><p>Nomor 18 adalah tanggung jawab. Pantang menyerah & selalu angkat mental tim.</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<h2 class="sec-title">SKILL BERANIMASI</h2><p class="sec-sub">Hover untuk efek glow</p>
+<div class="grid">
+<div class="card"><i class="fas fa-running"></i><h3>Speed & Stamina 92%</h3><p>Lari konsisten & recovery cepat.</p><div style="margin-top:12px;background:rgba(255,255,255,.1);height:6px;border-radius:10px"><div style="width:92%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:10px"></div></div></div>
+<div class="card"><i class="fas fa-handshake"></i><h3>Communication 95%</h3><p>Senjata utama — koordinasi lapangan.</p><div style="margin-top:12px;background:rgba(255,255,255,.1);height:6px;border-radius:10px"><div style="width:95%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:10px"></div></div></div>
+<div class="card"><i class="fas fa-brain"></i><h3>Game Reading 88%</h3><p>Baca arah bola & celah lawan.</p><div style="margin-top:12px;background:rgba(255,255,255,.1);height:6px;border-radius:10px"><div style="width:88%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:10px"></div></div></div>
+<div class="card"><i class="fas fa-bullseye"></i><h3>Finishing 90%</h3><p>Eksekusi tenang saat point penentu.</p><div style="margin-top:12px;background:rgba(255,255,255,.1);height:6px;border-radius:10px"><div style="width:90%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:10px"></div></div></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="contact-box">
+<div>
+<h2 style="font-size:42px;line-height:.9">AYO<br>TANDING<br>BARENG!</h2>
+<p style="color:#9aa3c0;margin:14px 0">Open sparring mini soccer & fun voli. Chat fast respon!</p>
+</div>
+<div>
+<a class="c-link" href="https://wa.me/6282272225853" target="_blank"><i class="fab fa-whatsapp" style="font-size:26px;color:#25D366"></i><div><b>WhatsApp</b><br><small>0822-7222-5853</small></div></a>
+<a class="c-link" href="https://instagram.com/chimifieuss" target="_blank"><i class="fab fa-instagram" style="font-size:26px;color:#E4405F"></i><div><b>Instagram</b><br><small>@chimifieuss</small></div></a>
+</div>
+</div>
+</section>
+
+<footer>© 2026 HAFIZ #18 • chimifieus • Animated Portfolio ⚽🏐</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active')})},{threshold:0.15});
+reveals.forEach(r=>obs.observe(r));
+document.addEventListener('mousemove',(e)=>{
+  const card=document.querySelector('.img-card');
+  const x=(e.clientX/window.innerWidth-0.5)*10;
+  const y=(e.clientY/window.innerHeight-0.5)*10;
+  card.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
+});
+</script>
+</body>
+</html>
